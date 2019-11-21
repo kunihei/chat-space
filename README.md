@@ -10,14 +10,16 @@
 ### Association
 - has_many  :groups, through: :groups_users
 - has_many  :comments
+- has_many  :groups_users
 
 ## groupsテーブル
 | Column | Type | Options      |
 | ------ | ---- | ------------ |
-| title  | text | null:  false |
+| title  | string | null:  false |
 ### Association
-- belongs_to :user, through: groups_users
-- has_many   :comments
+- has_many  :users, through: groups_users
+- has_many  :comments
+- has_many  :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -32,7 +34,9 @@
 | Column | Type | Options |
 |--------|------|---------|
 | text   | text | null: false|
-| image  | text | |
+| image  | string | |
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
