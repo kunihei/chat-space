@@ -8,7 +8,7 @@
 | password | string | null:  false |
 | username | string | null:  false |
 ### Association
-- has_many  :groups
+- has_many  :groups, through: :groups_users
 - has_many  :comments
 
 ## groupsテーブル
@@ -16,7 +16,7 @@
 | ------ | ---- | ------------ |
 | title  | text | null:  false |
 ### Association
-- belongs_to :user
+- belongs_to :user, through: groups_users
 - has_many   :comments
 
 ## groups_usersテーブル
