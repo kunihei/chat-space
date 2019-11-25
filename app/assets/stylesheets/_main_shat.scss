@@ -1,0 +1,106 @@
+.main-chat{
+  width: calc(100vw - 300px);
+  float: left;
+  .main__header{
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #eeeeee;
+    &__info{
+      margin-top: 35px;
+    }
+      &__info__group{
+        color: #333333;
+        font-size: 20px;
+        padding-bottom: 15px;
+      }
+      &__info__member{
+        font-size: 12px;
+        color: #999999;
+      }
+    
+    &__edit{
+      height: 40px;
+      color: skyblue;
+      border: solid 1px skyblue;
+      padding: 0 20px;
+      margin-top: 30px;
+      line-height: 40px;
+      position: absolute;
+      right: 40px;
+    }
+  }
+
+  .main-screen{
+    padding-left: 40px;
+    height: calc(100vh - 180px);
+    background-color: #fafafa;
+    box-sizing: border-box;
+    .main-message{
+      padding-top: 46px;
+      &__info{
+        display: flex;
+        padding-bottom: 10px;
+      }
+        &__info__name{
+          font-size: 16px;
+          color: #434A54;
+          font-weight: bold;
+        }
+        &__info__day{
+          font-size: 12px;
+          color: #999999;
+          margin-left: 10px;
+        }
+      &__words{
+        font-size: 14px;
+        color: #434A54;
+      }
+    }
+  }
+  .main-footer{
+    background-color: #dddddd;
+    height: 100px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    .main-search{
+      display: flex;
+      &__box{
+        position: relative;
+        width: calc( 100% - 130px);
+        &__words{
+          height: 50px;
+          width: 100%;
+          margin-right: 10px;
+          padding: 0 0 0 10px;
+          color: #434A54;
+          border-style: none;
+        }
+        &__icon{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 1.3rem;
+          cursor: pointer;
+          }
+          &__input{
+            display: none;
+          }
+        }
+      &__buttom{
+        height: 50px;
+        width: 100px;
+        position: absolute;
+        right: 45px;
+        padding: 0px 30px;
+        margin-left: 10px;
+        color: white;
+        cursor: pointer;
+        background-color: #38AEF0;
+        z-index: 1;
+      }
+    }
+  }
+}
+

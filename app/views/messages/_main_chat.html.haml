@@ -1,0 +1,26 @@
+.main-chat
+  .main__header
+    .main__header__info
+      .main__header__info__group
+        Group Name
+      .main__header__info__member
+        Member
+    .main__header__edit
+      Edit
+  .main-screen
+    .main-message
+      .main-message__info
+        .main-message__info__name
+          shouya
+        .main-message__info__day
+          2019/11/21 14:30
+      .main-message__words
+        this is a first message
+  .main-footer
+    .main-search
+      .main-search__box
+        %input.main-search__box__words{type: "text", placeholder: "type a message"}
+        %label{class: "main-search__box__icon"}
+          = icon("far","image")
+          %input{type: "file",class: "main-search__box__input"}
+      %input.main-search__buttom{type: "submit", value: "send"}
