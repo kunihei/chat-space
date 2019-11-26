@@ -65,22 +65,22 @@
     padding: 20px 40px;
     box-sizing: border-box;
     .main-search{
-      display: flex;
       &__box{
+        display: flex;
         position: relative;
-        width: calc( 100% - 130px);
+        width: 100%;
         &__words{
+          position: absolute;
           height: 50px;
-          width: 100%;
-          margin-right: 10px;
+          width: calc( 100% - 120px);
           padding: 0 0 0 10px;
           color: #434A54;
           border-style: none;
         }
         &__icon{
           position: absolute;
-          top: 10px;
-          right: 10px;
+          top: 15px;
+          right: 125px;
           font-size: 1.3rem;
           cursor: pointer;
           }
@@ -89,16 +89,16 @@
           }
         }
       &__buttom{
+        position: absolute;
+        right: 0;
         height: 50px;
         width: 100px;
-        position: absolute;
-        right: 45px;
         padding: 0px 30px;
         margin-left: 10px;
         color: white;
         cursor: pointer;
         background-color: #38AEF0;
-        z-index: 1;
+      
       }
     }
   }

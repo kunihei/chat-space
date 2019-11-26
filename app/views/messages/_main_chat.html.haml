@@ -1,0 +1,23 @@
+.main-chat
+  .main__header
+    .main__header__info
+      .main__header__info__group
+        Group Name
+      .main__header__info__member
+        Member
+    .main__header__edit
+      Edit
+  .main-screen
+    .messages
+      = render partial: 'message', collection: @messages
+
+  .main-footer
+    .main-search
+      = form_for [@group, @message] do |f|
+        .main-search__box
+          = f.text_field :content, class: 'main-search__box__words', placeholder: 'type a message'
+          .form__mask
+            =f.label :image, class: "main-search__box__icon" do
+              = icon("far","image")
+              = f.file_field :image, class: "main-search__box__input"
+          = f.submit 'send', class: 'main-search__buttom'
