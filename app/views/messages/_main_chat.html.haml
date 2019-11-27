@@ -2,11 +2,13 @@
   .main__header
     .main__header__info
       .main__header__info__group
-        Group Name
+        = @group.name
       .main__header__info__member
-        Member
-    .main__header__edit
-      Edit
+        Member:
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group.id),class: 'main__header__edit' do
+      edit
   .main-screen
     .messages
       = render partial: 'message', collection: @messages
