@@ -1,10 +1,8 @@
-$(function(){
-
-  
+$(function(){ 
   function buildHTML(message){
-    var images = (message.image.url !== null )? `<img class="lower-message__image" src="${message.image.url}">`: '';
+    var images = (message.image)? `<img class="lower-message__image" src="${message.image}">`: '';
 
-    var html =  `<div class="main-message">
+    var html =  `<div class="main-message" data-message_id= "${message.id}" >
                   <div class="main-message__info">
                     <div class="main-message__info__name">
                       ${message.user_name}
@@ -44,6 +42,30 @@ $(function(){
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
+    });
+  });
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.main-message').filter(":last").data('messageId')
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
     })
-  })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+        $('.messages').append(insertHTML);
+      });
+      $('.main-screen').animate({ scrollTop: $('.main-screen')[0].scrollHeight});
+    })
+    .fail(function() {
+      alert('error');
+    });
+    }
+  };
+  setInterval(reloadMessages, 7000);
+
 });
