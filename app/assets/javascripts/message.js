@@ -62,7 +62,7 @@ $(function(){
       $('.main-screen').animate({ scrollTop: $('.main-screen')[0].scrollHeight});
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
     }
   };
